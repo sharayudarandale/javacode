@@ -1,0 +1,17 @@
+class Solution {
+    void pushZerosToEnd(int[] arr) {
+        int n = arr.length;
+        int nonZeroIndex = 0; // This keeps track of the position for the next non-zero element
+
+        // Traverse the array
+        for (int i = 0; i < n; i++) {
+            // If the current element is not zero, swap it with the element at nonZeroIndex
+            if (arr[i] != 0) {
+                int temp = arr[i];
+                arr[i] = arr[nonZeroIndex];
+                arr[nonZeroIndex] = temp;
+                nonZeroIndex++;
+            }
+        }
+    }
+}
